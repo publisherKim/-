@@ -20,6 +20,7 @@ export aaa = () => {
 examModule = require('./module002.js');
 rts.exam003 = examModule.func001(); // 이와 같은 경우에 오류가 발생됨, 단순하게 함수자체를 rts.exam003에 대입할 때에는 변수처럼 하여야함. 왜냐면 맨 뒤에 ()를 붙이면 함수 자체가 가지 않고 실행된 그 결과를 대입하기 때문인 듯
 rts.exam004 = examModule.func002; // func002는 변수이기 때문에 그냥 뭐..
+```
 
 ## 변수의 호이스팅
 자료를 조금 더 찾아봐야겠다. 자스의 컴파일과 관련이 있는 듯, 
