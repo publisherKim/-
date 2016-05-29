@@ -36,7 +36,7 @@ m.on('b', () => {
 exports.m = m;
 ```
 ```
-> node
+$ node
 > var test = require('./event2.js');
 > test.m.emit('a');
 0
