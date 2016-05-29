@@ -52,12 +52,11 @@ console.log("filename : ", __filename); // 이건 그냥..
 
 ##텍스트파일 읽어오기
 먼저 `Hello World`라는 텍스트가 있는 `test.txt`를 작성하고 아래의 스크립트를 만든다.
-###test.txt
 ```
 HelloWorld
 ```
-###read.js
 ```Javascript
+// read.js
 var io = require('fs');
 var text = io.readFileSync('test.txt', 'utf-8');
 console.log("text", text);
