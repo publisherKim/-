@@ -24,3 +24,21 @@ rts.exam004 = examModule.func002; // func002는 변수이기 때문에 그냥 �
 
 ## 변수의 호이스팅
 자료를 조금 더 찾아봐야겠다. 자스의 컴파일과 관련이 있는 듯, 
+
+## process.on(....
+지난시간에 있던거 계속...
+
+## 서버실행하기
+```
+var http = require('http');
+var hostname = '127.0.0.1';
+var port = 3000;
+
+var server = http.createServer((req, res) => {
+	res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+	console.log(`server running http://${hostname}:${port}`); // ES6에서 추가된 문법, 간단한 스트링 템플릿
+})
+```
