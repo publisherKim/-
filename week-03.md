@@ -1,3 +1,5 @@
+이전 : https://github.com/zidell/node-study/blob/master/week-02.md
+
 ##지난주 복습
 - 노드의 장점 : 비동기(코드작성상 장단점-Meteor상에서 Meteor.wrapAsync로 극복, Express의 경우에는 async/wait 혹은 promise/then으로 하는 것으로 알고 있음, ~~걍 런타임에서 알아서 해주면 안되나~~)
 - 노드의 단점 : 싱글쓰레드(클러스터링 등을 통해서 극복 가능), IaaS를 이용하는경우에는 인프라단에서 로드 밸런싱을 자동으로 해줌(~~걍 런타임에서 자동으로 해주면 안되나~~)
