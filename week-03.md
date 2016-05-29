@@ -18,6 +18,31 @@ rts.exam003 = examModule.func001(); // 이와 같은 경우에 오류가 발생�
 rts.exam004 = examModule.func002; // func002는 변수이기 때문에 그냥 뭐..
 ```
 
+##모듈안에 이벤트 넣고 불러오기
+활용목적이 다소 의아하지만 어쨌든 아래와 같이 해서 동작하는 것을 만들었다. 실제 프로젝트에서는 EventEmitter를 직접 작성할 일은 별로 없을 것 같고, 외부 모듈들이 많이 사용하고 그것을 이용하는 일이 많을 것 같다는 생각이 든다.
+```javascript
+// event2.js
+var m = new process.EventEmitter();
+m.on('a', () => {
+	for(var i=0;i<3;i++){
+		console.log(i);
+	}
+});
+m.on('b', () => {
+	console.log('나는 b다');
+});
+exports.m = m;
+```
+```
+> node
+> var test = require('./event2.js');
+> test.m.emit('a');
+0
+1
+2
+true
+```
+
 ## 변수의 호이스팅
 호이스팅이라는 것은 많이 들어봤는데 먼가 기초적인 개념이었다. 이것도 모르고 여태까지 사용 서비스를 만들었다니ㅋㅋ 쉽게 생각해서 변수나 함수들이 작성되는 줄(실행되는 시점)에서 할당되는 것이 아니라 자바스크립트 엔진이 다 끌어모아서 먼저 값을 선언해주는 개념인 것 같다. 변수 우선이냐 함수 우선이냐는 걍 겹치는 이름 안쓰면 문제될 일은 없을 것 같고, 변수는 미리 끌어올려져서 선언되거나 말거나 어차피 값이 부여되기 전까지는 undefined나 크게 신경쓸 필요는 없을 것 같다. ~~모든게 대충대충~~
 * http://chanlee.github.io/2013/12/10/javascript-variable-scope-and-hoisting/
