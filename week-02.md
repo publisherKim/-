@@ -23,7 +23,7 @@ exports.sum = function(a, b){
 }
 ```
 ```
-> node
+$ node
 > var test = require('./sum.js');
 > test.sum(1,10);
 total 11
