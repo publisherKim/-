@@ -32,7 +32,7 @@ var str = str.substr(0, 3); // Javascript
 노드는 js로 파일을 만들어서 실행해도 되고, REFL모드라고해서 콘솔처럼 터미널에서 바로 명령행들을 입력하고 결과를 볼 수 있는
 기능이 있다. 터미널에서 아래와 같이 .js를 지정하지 않고 실행하면 REFL모드라 한다. ~~걍 노드용 콘솔인가~~
 ```
-> node
+$ node
 ```
 
 ##test.js 제작
@@ -46,7 +46,7 @@ console.log("filename : ", __filename); // 이건 그냥..
 ```
 그리고 실행한다.
 ```
-> node test.js
+$ node test.js
 ```
 넘나 단순해서 당연히 잘 실행된다.
 
@@ -62,7 +62,7 @@ var text = io.readFileSync('test.txt', 'utf-8');
 console.log("text", text);
 ```
 ```
-> node read.js
+$ node read.js
 ```
 개인적으로 백엔드상에서는 비동기보다는 동기 통신을 선호해서 `readFileSync` 명령행을 동기적으로 처리했다. 
 물론 이것도 넘나 단순해서 잘 실행이 되었다. 
