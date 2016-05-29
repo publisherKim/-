@@ -66,3 +66,5 @@ console.log("text", text);
 ```
 개인적으로 백엔드상에서는 비동기보다는 동기 통신을 선호해서 `readFileSync` 명령행을 동기적으로 처리했다. 
 물론 이것도 넘나 단순해서 잘 실행이 되었다. 
+
+다음 : https://github.com/zidell/node-study/blob/master/week-02.md
