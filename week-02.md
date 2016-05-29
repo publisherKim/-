@@ -1,3 +1,5 @@
+이전 : https://github.com/zidell/node-study/blob/master/week-01.md
+
 ##export/require?
 사실 1년 전까지만 해도 모듈이 왜 필요한지는 몰랐다. 걍 `<script src...`로 필요한 스크립트 파일들을 무한으로 불러와서 각각의 전역변수에 있는 것들을 실행시키면 그만이었다. 모듈 같은 라이브러리를 만들 때에도 걍 아무도 안 쓸 것 같은 전역변수 아무거나 하나 잡아서 잘 집어넣으면 잘 작동되었다.
 
@@ -51,3 +53,6 @@ process.on('exit', () => {
 });
 ```
 REFL 모드에서 실행하면, 아무일도 일어나지 않다가 REFL모드가 종료될 때 `프로세스 끝났어`라는 메시지가 출력된다. 실제 나의 프로젝트에 쓸 때 각 모듈마다 DB연결하고 `exit`시 연결을 종료하도록 할 때 이놈을 유용하게 썼다. 개발시에 exception 에러를 만나면 정상적으로 저 이벤트가 트리거되지 않기에 그때는 `caughtException`에도 DB연결을 종료하는 놈을 달아둬서 해결하였다.
+
+
+다음 : https://github.com/zidell/node-study/blob/master/week-03.md
