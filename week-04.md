@@ -24,8 +24,20 @@ $ npm install ejs --save
 뒤에 `--save` 옵션을 준 것은 현재의 하위 폴더 `node_modules`에 자동으로 설치되고, `packages.json`에도 추가된다.
 >추후에 클라이언트에서는 angular나 react등을 쓰게 되면 ejs같은 템플릿 엔진은 별로 쓸 일이 없을 것 같다는 생각. 하지만 서버렌더링에서도 좋을 듯.
 
+
 -----
 여기서부터는 다시 정우님 강의
 -----
+
+#jade
+- 들여쓰기 방법을 통해서 태그를 열고닫고(DOM구조)를 자동생성해준다.
+- express 제작자가 만듦
+
+링크 : https://github.com/pugjs/pug
+
+```
+$ npm install pug --save
+```
+
 
 
