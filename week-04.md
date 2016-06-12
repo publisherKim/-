@@ -68,10 +68,10 @@ server.listen(port, hostname, () => {
 // example.pug
 html
 	head
-		title
-			=title
+		title= title
 	body
-		=bodyTxt
+		div= bodytxt
+		div 이건 바로 입력한 텍스트
 ```
 
 
