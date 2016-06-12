@@ -14,7 +14,6 @@ $ npm init
 나중에 `package.json`에서도 수정해줘도 되므로 그냥 다 엔터키를 눌러서 넘어간다.
 
 
-
 ##ejs설치
 링크 : https://www.npmjs.com/package/ejs
 
@@ -23,3 +22,4 @@ $ npm init
 $ npm install ejs --save
 ```
 뒤에 `--save` 옵션을 준 것은 현재의 하위 폴더 `node_modules`에 자동으로 설치되고, `packages.json`에도 추가된다.
+>추후에 실제프로젝트에서 angular나 react등을 쓰게 되면 ejs같은 템플릿 엔진은 별로 쓸 일이 없을 것 같다는 생각. 하지만 reactivity한 프레임웍을 쓰기 이전에는 간단하게 템플릿 엔진 이해용도로는 좋을 듯.
