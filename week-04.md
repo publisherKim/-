@@ -52,7 +52,7 @@ var server = http.createServer((req, res) => {
 
 	var html = pug.renderFile('./example.pug', {
 		title : 'Hello World',
-		bodytxt : '이것은 텍스트입니다.'
+		bodyTxt : '이것은 텍스트입니다.'
 	});
 	res.writeHead(200, {
 		'Content-type' : 'text/html'
@@ -71,6 +71,7 @@ html
 		title
 			=title
 	body
-		=bodytxt
+		=bodyTxt
 ```
+
 
