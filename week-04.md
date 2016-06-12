@@ -39,5 +39,38 @@ $ npm install ejs --save
 $ npm install pug --save
 ```
 
+참고한 링크 : http://webapplog.com/jade/
+그리고 기존의 `server.js`파일을 불러와서 아래와 같이 실행한다. 예제가 그지같아서 잘 안 되었다. ~~merge는 갑자기 왜 튀어나와~~
+```javascript
+// server.js
+var http = require('http');
+var hostname = '127.0.0.1';
+var port = 3000;
+var pug = require('pug');
 
+var server = http.createServer((req, res) => {
+
+	var html = pug.renderFile('./example.pug', {
+		title : 'Hello World',
+		bodytxt : '이것은 텍스트입니다.'
+	});
+	res.writeHead(200, {
+		'Content-type' : 'text/html'
+	});
+	res.end(html);
+});
+
+server.listen(port, hostname, () => {
+	console.log(`server running http://${hostname}:${port}`);
+})
+```
+```
+// example.pug
+html
+	head
+		title
+			=title
+	body
+		=bodytxt
+```
 
