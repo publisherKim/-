@@ -73,5 +73,13 @@ html
 		div= bodytxt
 		div 이건 바로 입력한 텍스트
 ```
+> 익숙해지면 정말 편할 것 같다는 생각. 하지만 간단한 거 말고 복잡한 DOM구조에서는 쓸 일이 있을지 의문. ~~react나 angular만 향해 달린다~~
 
+## nodemon
+수정사항이 발생할 때마다 매번 노드서버 껐다켰다하기 짜증나니까 설치.
+```
+$ npm install nodemon -g
+$ nodemon server.js
+```
 
+#다시 ejs
