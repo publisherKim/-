@@ -82,4 +82,5 @@ $ npm install nodemon -g
 $ nodemon server.js
 ```
 
-#다시 ejs
+## esj와 pug의 차이점
+> 아직 잘 이해가 안 됨ㅎ pug(jade)는 서버측에서 템플릿에 값까지 모두 치환해줘서 보내주는 것은 이해함. 근데 ejs는 서버측에서 최종 string을 템플릿 코드 그 자체를 넣어서 보내준다는 것인지? 클라이언트에서 최종 값치환을 하는 것 같지는 않은데..
