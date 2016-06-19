@@ -78,7 +78,7 @@ query = client.query('INSERT INTO USER SET ?', {
 // mysql-insert.js
 var query;
 query = client.query('UPDATE user SET gender=? WHERE name=?', [
-	'femail',
+	'female',
 	'홍구테스트'
 ], (error, rows) => {
 	console.log("error", error);
