@@ -53,6 +53,7 @@ client.end();
 위 코드는 사용자 요청 없이 실행하는 즉시 콘솔이 바로 찍힌다.
 
 ```
+$ node mysql.js
 error null
 rows [ RowDataPacket { user_no: 1, name: 'test', gender: 'male' } ]
 ```
