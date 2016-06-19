@@ -81,11 +81,25 @@ query = client.query('INSERT INTO USER SET ?', {
 ##수정 쿼리를 해보자
 `홍구테스트`라는 이름을 가진 레코드를 모두 `female`로 바꾸어본다. ?에 대입되는 것은 알아서 escape처리하겠지?ㅎㅎ
 ```javascript
-// mysql-insert.js
+// mysql-update.js
 // 중략
 var query;
 query = client.query('UPDATE user SET gender=? WHERE name=?', [
 	'female',
+	'홍구테스트'
+], (error, rows) => {
+	console.log("error", error);
+	console.log("rows", rows);
+});
+```
+
+##삭제 쿼리를 해보자
+`홍구테스트`라는 이름을 가진 레코드를 모두 삭제해본다. ~~이건 안해봐도 당연히 되겠지? 히히~~
+```javascript
+// mysql-delete.js
+// 중략
+var query;
+query = client.query('DELETE user WHERE name=?', [
 	'홍구테스트'
 ], (error, rows) => {
 	console.log("error", error);
