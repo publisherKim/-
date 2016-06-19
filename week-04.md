@@ -84,3 +84,5 @@ $ nodemon server.js
 
 ## esj와 pug의 차이점
 > 아직 잘 이해가 안 됨ㅎ pug(jade)는 서버측에서 템플릿에 값까지 모두 치환해줘서 보내주는 것은 이해함. 근데 ejs는 서버측에서 최종 string을 템플릿 코드 그 자체를 넣어서 보내준다는 것인지, 서버측에선 관련 템플릿과 값을 보내주고 클라이언트에서 작업이 되는 것인가?음.. ~~아몰랑~~
+
+다음 : https://github.com/zidell/node-study/blob/master/week-05.md
