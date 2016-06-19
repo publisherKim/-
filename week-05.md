@@ -30,6 +30,8 @@ INSERT INTO `user` (`user_no`, `name`, `gender`) VALUES (1, 'test', 'male');
 $ npm init
 $ npm i mysql --save
 ```
+
+##쿼리 날려보기
 자 실행해보자..
 
 ```javascript
@@ -44,7 +46,7 @@ const client = mysql.createConnection({
 });
 client.connect();
 
-var result = client.query('SELECT * FROM user', (error, rows, fields) => {
+var result = client.query('SELECT * FROM user', (error, rows) => { // 비동기 개짱남!ㅎㅎ
 	console.log("error", error);
 	console.log("rows", rows);
 });
@@ -56,4 +58,20 @@ client.end();
 $ node mysql.js
 error null
 rows [ RowDataPacket { user_no: 1, name: 'test', gender: 'male' } ]
+```
+
+##추가 쿼리를 해보자
+```javascript
+// insert.js
+// 중략
+var query;
+var USER = ;
+query = mysql.query('INSERT INTO USER SET ?', {
+	name : '홍구테스트',
+	gender : 'male'
+}, (error, rows) => {
+	console.log("error", error);
+	console.log("rows", rows);
+});
+console.log(query.insertId);
 ```
