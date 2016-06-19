@@ -19,6 +19,8 @@ CREATE TABLE `user` (
   `gender` enum('male','female') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'male',
   PRIMARY KEY (`user_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `user` (`user_no`, `name`, `gender`) VALUES (1, 'test', 'male');
+
 ```
 
 ##node에서 접속
@@ -31,30 +33,26 @@ $ npm i mysql --save
 자 실행해보자..
 
 ```javascript
-const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
-
+// mysql.js
 const mysql = require('mysql');
 const client = mysql.createConnection({
 	host : 'localhost',
 	port : '3306',
 	user : 'root',
-	password : '***',
+	password : 'ps',
 	database : 'nodestudy'
 });
 client.connect();
 
-var server = http.createServer((req, res) => {
-	client.query('SELECT ')
-	var response = '';
-	res.writeHead(200, {
-		'Content-type' : 'text/html'
-	});
-	res.end(response);
+var result = client.query('SELECT * FROM user', (error, rows, fields) => {
+	console.log("error", error);
+	console.log("rows", rows);
 });
+client.end();
+```
+위 코드는 사용자 요청 없이 실행하는 즉시 콘솔이 바로 찍힌다.
 
-server.listen(port, hostname, () => {
-	console.log(`server running http://${hostname}:${port}`);
-})
+```
+error null
+rows [ RowDataPacket { user_no: 1, name: 'test', gender: 'male' } ]
 ```
