@@ -62,16 +62,13 @@ rows [ RowDataPacket { user_no: 1, name: 'test', gender: 'male' } ]
 
 ##추가 쿼리를 해보자
 ```javascript
-// insert.js
-// 중략
+// mysql-insert.js
 var query;
-var USER = ;
-query = mysql.query('INSERT INTO USER SET ?', {
+query = client.query('INSERT INTO USER SET ?', {
 	name : '홍구테스트',
 	gender : 'male'
 }, (error, rows) => {
 	console.log("error", error);
-	console.log("rows", rows);
+	console.log("rows", rows); // INSERT할 때에는 쿼리에 대한 결과상태 객체를 반환한다. rows.insertId 라든가...
 });
-console.log(query.insertId);
 ```
