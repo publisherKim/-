@@ -79,6 +79,7 @@ query = client.query('INSERT INTO USER SET ?', {
 ```
 
 ##수정 쿼리를 해보자
+`홍구테스트`라는 이름을 가진 레코드를 모두 `female`로 바꾸어본다. ?에 대입되는 것은 알아서 escape처리하겠지?ㅎㅎ
 ```javascript
 // mysql-insert.js
 // 중략
