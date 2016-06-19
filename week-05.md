@@ -30,10 +30,6 @@ INSERT INTO `user` (`user_no`, `name`, `gender`) VALUES (1, 'test', 'male');
 $ npm init
 $ npm i mysql --save
 ```
-
-##쿼리 날려보기
-자 실행해보자..
-
 ```javascript
 // mysql.js
 const mysql = require('mysql');
@@ -45,12 +41,20 @@ const client = mysql.createConnection({
 	database : 'nodestudy'
 });
 client.connect();
+// 쿼리를 이곳에 넣을 예정임
+client.end();
+```
 
+##쿼리 날려보기
+자 실행해보자..
+
+```javascript
+// mysql.js
+// 중략
 var result = client.query('SELECT * FROM user', (error, rows) => { // 비동기 개짱남!ㅎㅎ
 	console.log("error", error);
 	console.log("rows", rows);
 });
-client.end();
 ```
 위 코드는 사용자 요청 없이 실행하는 즉시 콘솔이 바로 찍힌다.
 
@@ -63,6 +67,7 @@ rows [ RowDataPacket { user_no: 1, name: 'test', gender: 'male' } ]
 ##추가 쿼리를 해보자
 ```javascript
 // mysql-insert.js
+// 중략
 var query;
 query = client.query('INSERT INTO USER SET ?', {
 	name : '홍구테스트',
@@ -76,6 +81,7 @@ query = client.query('INSERT INTO USER SET ?', {
 ##수정 쿼리를 해보자
 ```javascript
 // mysql-insert.js
+// 중략
 var query;
 query = client.query('UPDATE user SET gender=? WHERE name=?', [
 	'female',
