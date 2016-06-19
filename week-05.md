@@ -72,3 +72,16 @@ query = client.query('INSERT INTO USER SET ?', {
 	console.log("rows", rows); // INSERT할 때에는 쿼리에 대한 결과상태 객체를 반환한다. rows.insertId 라든가...
 });
 ```
+
+##수정 쿼리를 해보자
+```javascript
+// mysql-insert.js
+var query;
+query = client.query('UPDATE user SET gender=? WHERE name=?', [
+	'femail',
+	'홍구테스트'
+], (error, rows) => {
+	console.log("error", error);
+	console.log("rows", rows);
+});
+```
