@@ -13,3 +13,26 @@ DB에 관한 복습
 ※ 쓰레드 : 한 프로세스의 생명주기 같은 거
 ※ 라운드로빈(?) : 싱글쓰레드 구조상 작업을 순차적으로 하지 않고, 짧은 이터레이션으로 각각의 작업들을 순차적으로 반복 진행하여 짧은 작업은 짧은작업대로 먼저 진행되도록 하는 것. 이렇게 함으로써 메모리에 다 들고 있지 않고 짧은 작업들은 완료하여 가볍게 할 수 있다.
 
+창고링크 : http://opens.kr/83
+
+```javascript
+const mysql = require('mysql');
+const pool = mysql.createPool({
+	connectionLimit : 10,
+	host : 'localhost',
+	port : '3306',
+	user : 'root',
+	password : 'ps',
+	database : 'nodestudy'
+});
+
+pool.getConnection(function(err, connection) {
+	var result = connection.query('SELECT * FROM user', (error, rows, fields) => {
+		console.log("error", error);
+		console.log("rows", rows);
+	});
+	connection.end();
+});
+```
+
+근데 pool은 여기에서 종료가 필요 없는것인가? 노드처럼 이벤트 기반에서 하는거 보니까 다소 헷갈림. 공부를 좀 해야겠음.
