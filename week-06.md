@@ -5,7 +5,7 @@ DB에 관한 복습
 
 이번 시간에는 connection pool을 만들어서 작업을 진행해본다.
 
-* DB 데이터 이용시 한글이 깨진다면, connection 만들 때 `charset : 'utf-8'`을 활성화해준다.
+* DB 데이터 이용시 한글이 깨진다면, connection 만들 때 `charset : 'utf8'`을 활성화해준다.
 
 #connectionPool
 연결 생성시  `createConnection` 대신에 `createPool`을 이용하고, `getConnection`을 통해서 접속? 접속과 종료에 따른 오버헤드를 방지하기 위하여, 어느정도 연결 상태를 가지고 있는 것? 기본적으로 `connection`은 동일한 사용자라도 매번 생성되고 없어지니까, `connectionPool`을 이용하여 동일 접속자에 한해서 지속적으로 연결을 관리하는 것 같음.
