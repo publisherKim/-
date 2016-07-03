@@ -36,3 +36,6 @@ pool.getConnection(function(err, connection) {
 ```
 
 근데 pool은 여기에서 종료가 필요 없는것인가? 노드처럼 이벤트 기반에서 하는거 보니까 다소 헷갈림. 공부를 좀 해야겠음.
+
+
+다음 : https://github.com/zidell/node-study/blob/master/week-07.md
