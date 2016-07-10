@@ -11,3 +11,6 @@ DB 커넥션을 계속 한다. 지난주 이후로 기존의 노드서버(미티
 
 #clustering
 풀 별로 권한이나 여러가지 접속에 관한 것을 독립적으로 주고, 라운드로빈이나 랜덤 등을 통해서 쿼리 실행 효율도 늘릴 수 있다.
+
+
+다음 : https://github.com/zidell/node-study/blob/master/week-08.md
