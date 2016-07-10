@@ -25,9 +25,6 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
 	res.send('Hello NodeJS');
 })
-app.get('/jw', function(req, res){
-
-});
 app.listen(port, function(){
 	console.log(`Example app listening on port ${port}`);
 });
