@@ -10,8 +10,10 @@ $ npm install express --save
 ```
 근데 설치하고 나니까 MVC관련된 파일들도 없고 라우팅도 없고 걍 익스프레스만(?) 설치되어서 당황
 
-#노가다 코드 작성
+
+##노가다 코드 작성
 ```javascript
+// index.js
 var express = require('express');
 var app = express();
 
@@ -23,9 +25,22 @@ app.locals.pretty = true;
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-	res.send('Hello NodeJS');
+	res.send(`
+	<html>
+		<body>
+			<h1>Hello NodeJS</h1>
+		</body>
+	</html>
+	`);
 })
 app.listen(port, function(){
 	console.log(`Example app listening on port ${port}`);
 });
 ```
+
+
+##
+
+
+
+
