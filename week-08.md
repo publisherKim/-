@@ -20,16 +20,8 @@ const port = '3000';
 
 app.locals.pretty = true;
 
-app.set('view engine', 'jade');
-app.set('views', __dirname);
 app.use(express.static('public'));
 
-app.get('/jade', function(req, res){
-	res.render('temp', {
-		time : Date(),
-		title:'jade'
-	});
-})
 app.get('/', function(req, res){
 	res.send('Hello NodeJS');
 })
@@ -37,6 +29,6 @@ app.get('/jw', function(req, res){
 
 });
 app.listen(port, function(){
-	console.log('Example app listening on port '+port);
+	console.log(`Example app listening on port ${port}`);
 });
 ```
