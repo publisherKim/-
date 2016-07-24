@@ -73,5 +73,14 @@ app.get('/user/:id', [myLogger], function(req, res, next){ // /user/:id에 대�
 app.listen(3000, function(){
 	console.log('Example app listening on port 3000!');
 });
-
 ```
+
+#CRUD 만들기
+개인적으로 마크업과 멀어지는 jade(pug)은 선호하지 않으므로, 마크업이 보존된 상태로 작업할 수 있는 핸들바를 깔아본다.
+참고 : https://github.com/ericf/express-handlebars
+※ 위 문서에 따라 기본적인 views 폴더와 views/home.handlebars와 views/layouts/main.handlebars를 생성해야한다.
+```
+$ npm install express-handlebars
+```
+
+
