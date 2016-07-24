@@ -83,7 +83,9 @@ app.listen(3000, function(){
 $ npm install express-handlebars
 ```
 ##form 만들기
+위에 나온 메뉴얼대로 기본적인 views 폴더에 관한 설정을 마쳤다고 가정하고,
 ```html
+<!-- views/form.handlebars -->
 <form action="/form_receiver" method="post">
 	<input type="text" name="name" placeholder="name" />
 	<br/>
