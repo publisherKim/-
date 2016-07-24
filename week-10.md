@@ -40,7 +40,7 @@ var app = express();
 
 var myLogger = function(req, res, next){ // myLogger라는 미들웨어를 정의
 	console.log(`log : ${req.path}`); // 콘솔에 경로 찍음
-	next(); // 다음으로 턴.. 이거 없으면 멈춤?
+	next(); // 다음으로 턴.. 이거 없으면 대기상태로 빠진다.
 };
 app.use(myLogger); // 방금 생성한 함수를 미들웨어로 쓴다고 말해준다.
 
