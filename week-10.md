@@ -32,6 +32,7 @@ app.listen(3000, function(){
 });
 ```
 
+
 미들웨어를 하나 만들어 보자. 단순한 함수처럼 만들어 놓고 use(미들웨어)를 하면 된다.
 ```javascript
 var express = require('express');
