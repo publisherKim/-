@@ -125,7 +125,7 @@ app.post('/form_receiver', [urlencodedParser], function(req, res){ // 받는 쪽
 app.listen(3000);
 ```
 이렇게 하는 경우에 req.body에서 req.body.name과 req.body.mesnsage를 받을 수 있게 된다.
-```json
+```javascript	
 req.body { 
 	name: 'Test Name', 
 	message: 'Test Message' 
