@@ -82,5 +82,14 @@ app.listen(3000, function(){
 ```
 $ npm install express-handlebars
 ```
-
-
+##form 만들기
+```html
+<form action="/form_receiver" method="post">
+	<input type="text" name="name" placeholder="name" />
+	<br/>
+	<textarea name="message" placeholder="message"></textarea>
+	<br/>
+	<button type="submit">Submit</button>
+</form>
+```
+이제 전송을 해보고, 받는 방법을 해보자.
