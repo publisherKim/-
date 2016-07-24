@@ -52,3 +52,26 @@ app.listen(3000, function(){
 	console.log('Example app listening on port 3000!');
 });
 ```
+
+##특정 라우트에만 미들웨어 적용하기
+위에 있는 것은 전역적인 적용이고, 공식문서에 따르면 두번째 파라미터로 라우트이름을 지정한 배열을 전달하면, 해당 라우트에서만 활용한다.
+```javascript
+var express = require('express');
+var app = express();
+
+var myLogger = function(req, res, next){
+	console.log(`log : ${req.path}`);
+	next();
+};
+
+app.get('/', function(req, res){
+	res.send('Hello World');
+});
+app.get('/user/:id', [myLogger], function(req, res, next){ // /user/:id에 대해서만 myLogger를 실행하도록 지정한다. 
+	res.send(`user id is ${req.params.id}`);
+})
+app.listen(3000, function(){
+	console.log('Example app listening on port 3000!');
+});
+
+```
