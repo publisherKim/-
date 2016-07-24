@@ -6,7 +6,7 @@
 
 #미들웨어를 써보자
 ## 일단 간단한 라우팅..
-express의 라우팅은 두번째 파라미터로 req, res, next를 받도록 하면 된다(아마도 변경가능)
+express의 라우팅은 두번째 파라미터로 `req`, `res`, `next`를 받도록 하면 된다(아마도 변경가능)
 ```javascript
 app.get('/user/:id', function(req, res, next){ // URI 설정시 `:변수명`으로 설정하면 콜백에서 req.params[`변수명`]으로 사용 가능
   console.log('req.params.id', req.params.id);
@@ -78,7 +78,7 @@ app.listen(3000, function(){
 #CRUD 만들기
 개인적으로 마크업과 멀어지는 jade(pug)은 선호하지 않으므로, 마크업이 보존된 상태로 작업할 수 있는 핸들바를 깔아본다.
 참고 : https://github.com/ericf/express-handlebars
-※ 위 문서에 따라 기본적인 views 폴더와 views/home.handlebars와 views/layouts/main.handlebars를 생성해야한다.
+※ 위 문서에 따라 기본적인 `views` 폴더와 `views/home.handlebars`와 `views/layouts/main.handlebars`를 생성해야한다.
 ```
 $ npm install express-handlebars
 ```
@@ -126,7 +126,7 @@ app.post('/form_receiver', [urlencodedParser], function(req, res){ // 받는 쪽
 
 app.listen(3000);
 ```
-이렇게 하는 경우에 req.body에서 req.body.name과 req.body.mesnsage를 받을 수 있게 된다.
+이렇게 하는 경우에 `req.body`에서 `req.body.name`과 `req.body.mesnsage`를 받을 수 있게 된다.
 ```javascript	
 req.body { 
 	name: 'Test Name', 
