@@ -93,3 +93,41 @@ $ npm install express-handlebars
 </form>
 ```
 이제 전송을 해보고, 받는 방법을 해보자.
+```javascript
+app.post('/form_receiver', function(req, res){
+	console.log("req.body", req.body);
+})
+```
+이렇게 하면 req.body에 아무거도 찍히지 않는다. 그래서 bodyParser 미들웨어를 설치하여 post로 들어온 폼 변수들에 접근할 수 있도록 한다.
+참고 : https://github.com/expressjs/body-parser
+```
+$ npm install body-parser
+```
+```javascript
+// crud.js (full source)
+var express = require('express');
+var exphbs  = require('express-handlebars');
+var bodyParser = require('body-parser'); // 이번에 설치한 bodyParser를 불러들이고
+var urlencodedParser = bodyParser.urlencoded({ extended: false }); // POST로 들어오면 url_encode가 되나부다(불확실)
+
+var app = express();
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.get('/', function (req, res) {
+    res.render('form');
+});
+app.post('/form_receiver', [urlencodedParser], function(req, res){ // 받는 쪽 라우트에서 들어온 정보를 파싱할 수 있는 미들웨어를 연결해준다. 미들웨어가 하나인 경우에는 배열로 전달하지 않아도 되는 듯하지만 통일성을 위해..
+	console.log("req.body", req.body);
+})
+
+app.listen(3000);
+```
+이렇게 하는 경우에 req.body에서 req.body.name과 req.body.mesnsage를 받을 수 있게 된다.
+```json
+req.body { 
+	name: 'Test Name', 
+	message: 'Test Message' 
+}
+```
