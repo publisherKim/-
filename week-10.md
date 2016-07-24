@@ -6,7 +6,7 @@
 
 #미들웨어를 써보자
 ## 일단 간단한 라우팅..
-express의 라우팅은 두번째 파라미터로 `req`, `res`, `next`를 받도록 하면 된다(아마도 변경가능)
+express의 라우팅은 두번째 파라미터로 콜백함수를 지정하고 파라미터로는 `req`, `res`, `next`를 받도록 하면 된다(아마도 변경가능)
 ```javascript
 app.get('/user/:id', function(req, res, next){ // URI 설정시 `:변수명`으로 설정하면 콜백에서 req.params[`변수명`]으로 사용 가능
   console.log('req.params.id', req.params.id);
