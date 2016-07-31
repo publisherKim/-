@@ -14,8 +14,10 @@ $ express testapp
 $ npm i
 $ DEBUG=myapp:* npm start
 ```
-![express기본구조](imgs/tree.png)
-![localhost:3000으로 접속하면 잘 뜬다](imgs/express.png)
+express기본구조
+![](imgs/tree.png)
+localhost:3000으로 접속하면 잘 뜬다
+![](imgs/express.png)
 
 #몇 가지 안내(주석참고)
 ```javascript
