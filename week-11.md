@@ -145,7 +145,7 @@ app.use('/auth', auth); // 여기에도 위에꺼 따와서 만든다.
 	</form>
 </div>
 ```
-이렇게 출력된다. 핸들바 기초 세팅은 기존 스터디(https://github.com/zidell/node-study/blob/master/week-10.md)를 참고하거나 이 저장소에 있는 소스의 week-11을 참고(https://github.com/zidell/node-study/tree/master/sources/week-11/testapp)한다.
+이렇게 출력된다. 핸들바 기초 세팅은 기존 스터디(https://github.com/zidell/node-study/blob/master/week-10.md)를 참고하거나 이 저장소에 있는 소스의 week-11을 참고(https://github.com/zidell/node-study/tree/master/sources/week-11/testapp )한다.
 
 부트스트랩빨로 예쁘게 잘 나온다.
 ![](imgs/login_form.png)
