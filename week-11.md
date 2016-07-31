@@ -1,5 +1,7 @@
 이전 : https://github.com/zidell/node-study/blob/master/week-10.md
 
+이번 수업에서는 `express-generater`를 통한 기초 스케폴딩 생성, `handlebars`, `routes`, `mysql` 등을 활용해본다.
+
 #express-generator
 익스프레스를 쓸 때 권장할만한 기초적인 MVC가 들어가있는 거..
 참고 : http://expressjs.com/en/starter/generator.html
@@ -145,6 +147,19 @@ app.use('/auth', auth); // 여기에도 위에꺼 따와서 만든다.
 	</form>
 </div>
 ```
+진짜 마지막으로 로그인창스럽게 출력될 수 있도록 기본 `/public/stylesheets/sytle.css`도 수정해준다.
+```css
+body {
+	padding-top: 60px;
+}
+.container {
+	max-width: 700px;
+}
+#auth-wrapper form {
+	margin: 50px auto;
+	max-width: 300px;
+}
+```
 이렇게 출력된다. 핸들바 기초 세팅은 기존 스터디(https://github.com/zidell/node-study/blob/master/week-10.md)를 참고하거나 이 저장소에 있는 소스의 week-11을 참고(https://github.com/zidell/node-study/tree/master/sources/week-11/testapp )한다.
 
 부트스트랩빨로 예쁘게 잘 나온다.
@@ -167,3 +182,43 @@ module.exports = router;
 ```
 브라우저에 post로 넘어온 데이타가 정상적으로 출력된다.
 ![](imgs/login_form_posted.png)
+
+
+#DB연결해보기
+아주 오래전에 했던 mysql 연결하는 것을 다시 가지고 온다. 기억이 하나도 안 나니까 기존에 했던 스터디 https://github.com/zidell/node-study/blob/master/week-05.md 에서 많은 소소들을 복붙하자.
+
+```
+$ npm i mysql --save
+```
+
+```javascript
+// routes/auth.js source
+var express = require('express');
+var router = express.Router();
+
+router.get('/login', function(req, res, next) {
+  res.render('auth/login', { title: 'Login' });
+});
+router.post('/login', function(req, res, next) {
+	const mysql = require('mysql');
+	const client = mysql.createConnection({
+		host : 'localhost',
+		port : '3306',
+		user : 'root',
+		password : '****',
+		database : 'nodestudy'
+	});
+	client.connect();
+
+	var result = client.query('SELECT * FROM users WHERE email=? and password=?', [req.body.email, req.body.password], (error, rows, fields) => {
+		if(rows.length>1){
+			res.send('login success');
+		}else{
+			res.send('login failed');
+		}
+	});
+	client.end();
+});
+
+module.exports = router;
+```
