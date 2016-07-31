@@ -14,7 +14,7 @@ $ express testapp
 $ npm i
 $ DEBUG=myapp:* npm start
 ```
-
+![express기본구조](imgs/tree.png)
 ![localhost:3000으로 접속하면 잘 뜬다](imgs/express.png)
 
 #몇 가지 안내(주석참고)
@@ -84,7 +84,8 @@ app.use(function(err, req, res, next) {
 module.exports = app; // 모듈로 내보냄
 ```
 
-#routes/index.js
+#라우트파일
+걍 살펴보자ㅎㅎ
 ```javascript
 // routes/index.js source
 var express = require('express');
@@ -96,5 +97,5 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
-
 ```
+
