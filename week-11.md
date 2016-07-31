@@ -134,14 +134,34 @@ app.use('/auth', auth); // 여기에도 위에꺼 따와서 만든다.
 
 		<div class="form-group">
 			<label for="">Email</label>
-			<input type="text" class="form-control" id="" placeholder="" autofocus="autofocus">
+			<input type="text" name="email" class="form-control" id="" placeholder="" autofocus="autofocus">
 		</div>
 		<div class="form-group">
 			<label for="">Password</label>
-			<input type="password" class="form-control" id="" placeholder="">
+			<input type="password" name="password" class="form-control" id="" placeholder="">
 		</div>
 
 		<button type="submit" class="btn btn-primary btn-block">Login</button>
 	</form>
 </div>
+```
+이렇게 출력된다. 핸들바 기초 세팅은 기존 스터디(https://github.com/zidell/node-study/blob/master/week-10.md)를 참고하거나 이 저장소에 있는 소스의 week-11을 참고(https://github.com/zidell/node-study/tree/master/sources/week-11/testapp)한다.
+
+부트스트랩빨로 예쁘게 잘 나온다.
+![](imgs/login_form.png)
+
+#Post 데이터 처리
+라우트에 post로도 받는 것도 하나 만들어서 간단하게 리턴까지만 해보자.
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/login', function(req, res, next) {
+  res.render('auth/login', { title: 'Login' });
+});
+router.post('/login', function(req, res, next) { // post로 받은 데이터를 걍 단순하게 리턴만한다. 추후에는 여기에 DB연결 이후에 값을 검증하는 것들도 넣어야겠지.
+  res.send(req.body);
+});
+
+module.exports = router;
 ```
