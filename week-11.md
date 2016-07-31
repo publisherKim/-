@@ -210,7 +210,7 @@ router.post('/login', function(req, res, next) {
 	});
 	client.connect();
 
-	var result = client.query('SELECT * FROM users WHERE email=? and password=?', [req.body.email, req.body.password], (error, rows, fields) => {
+	var result = client.query('SELECT * FROM users WHERE email=? AND password=?', [req.body.email, req.body.password], (error, rows, fields) => {
 		if(rows.length>1){
 			res.send('login success');
 		}else{
