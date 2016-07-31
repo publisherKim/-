@@ -160,8 +160,10 @@ router.get('/login', function(req, res, next) {
   res.render('auth/login', { title: 'Login' });
 });
 router.post('/login', function(req, res, next) { // post로 받은 데이터를 걍 단순하게 리턴만한다. 추후에는 여기에 DB연결 이후에 값을 검증하는 것들도 넣어야겠지.
-  res.send(req.body);
+  res.send(req.body); // 로그인폼에서 input에 지정한 이름으로 들어온다. req.body.email 그리고 req.body.password겠지..
 });
 
 module.exports = router;
 ```
+브라우저에 post로 넘어온 데이타가 정상적으로 출력된다.
+![](imgs/login_form_posted.png)
