@@ -82,7 +82,7 @@ app.listen(3000, function(){
 참고 : https://github.com/ericf/express-handlebars
 ※ 위 문서에 따라 기본적인 `views` 폴더와 `views/home.handlebars`와 `views/layouts/main.handlebars`를 생성해야한다.
 ```
-$ npm install express-handlebars
+$ npm install express-handlebars --save
 ```
 ##form 만들기
 위에 나온 메뉴얼대로 기본적인 views 폴더에 관한 설정을 마쳤다고 가정하고,

@@ -101,3 +101,47 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ```
 
+#라우팅을 걸어보자.
+`routes` 폴더에 `auth.js`를 만들어보자.
+```javascript
+var express = require('express');
+var router = express.Router();
+
+router.get('/login', function(req, res, next) { // app.js에서 auth에 이 라우팅을 걸어줄 것이기 때문에 /auth/login이 실제 URL이 된다.
+  res.render('auth/login', { title: 'Login' });
+});
+
+module.exports = router;
+
+```
+그리고 app.js에서 연결을 해준다.
+```javascript
+// app.js
+...
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var auth = require('./routes/auth'); // 위에꺼 따온 다듬에 auth로 한다.
+...
+app.use('/', routes);
+app.use('/users', users);
+app.use('/auth', auth); // 여기에도 위에꺼 따와서 만든다.
+```
+그리고 마지막으로 로그인 뷰를 출력할 핸들바 파일을 만든다.
+```html
+<div id="auth-wrapper">
+	<form action="" method="POST" role="form">
+		<legend>Login</legend>
+
+		<div class="form-group">
+			<label for="">Email</label>
+			<input type="text" class="form-control" id="" placeholder="" autofocus="autofocus">
+		</div>
+		<div class="form-group">
+			<label for="">Password</label>
+			<input type="password" class="form-control" id="" placeholder="">
+		</div>
+
+		<button type="submit" class="btn btn-primary btn-block">Login</button>
+	</form>
+</div>
+```
