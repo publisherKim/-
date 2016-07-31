@@ -14,10 +14,12 @@ $ express testapp
 $ npm i
 $ DEBUG=myapp:* npm start
 ```
-![](imgs/express.png)
+
+![localhost:3000으로 접속하면 잘 뜬다](imgs/express.png)
 
 #몇 가지 안내(주석참고)
 ```javascript
+// full app.js source
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -33,7 +35,7 @@ var app = express();
 // view engine setup
 // app.set은 앱에서 필요한 설정을 하는 것, 아래에 나오는 app.use는 미들웨어
 app.set('views', path.join(__dirname, 'views')); // view 폴더럴 설정, 
-app.set('view engine', 'jade'); // 엔진설정. 난 개인적으로 핸들바를 선호. 바꿀것임.
+app.set('view engine', 'jade'); // 엔진설정. 갠적으로 핸들바를 선호하지만 귀찮으니까 기본설정에 따라보자.
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -80,5 +82,19 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app; // 모듈로 내보냄
+```
+
+#routes/index.js
+```javascript
+// routes/index.js source
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
 
 ```
